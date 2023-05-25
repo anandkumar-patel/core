@@ -1,18 +1,11 @@
-package anand.learn.java8.lambda.comparator;
+package anand.learn.java8.lamda.sort;
 
 import java.math.BigDecimal;
 
 public class Developer {
-	private String name;
-	private BigDecimal salary;
-	private int age;
-
-	public Developer(String name, BigDecimal salary, int age) {
-
-		this.name = name;
-		this.salary = salary;
-		this.age = age;
-	}
+	String name;
+	BigDecimal salary;
+	int age;
 
 	public String getName() {
 		return name;
@@ -38,8 +31,15 @@ public class Developer {
 		this.age = age;
 	}
 
+	public Developer(String name, BigDecimal salary, int age) {
+		this.name = name;
+		this.salary = salary;
+		this.age = age;
+	}
+	
+	@Override
 	public String toString() {
-		return name + " " + salary + " " + age;
+		return "[name ="+this.name +", salary ="+this.salary+", age ="+this.age+"]";
 	}
 
 }
