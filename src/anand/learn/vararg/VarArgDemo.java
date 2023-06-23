@@ -1,18 +1,41 @@
 package anand.learn.vararg;
 
-public class VarArgDemo {
-
-	public static void main(String[] args) {
-		VarArgDemo obj=new VarArgDemo();
-		obj.foo("Anand");
-		obj.foo("Patel", 1, 2);
-
-
-	}
-	void foo(String a, int... b) {
-	    int b1 = b.length > 0 ? b[0] : 0;
-	    int b2 = b.length > 1 ? b[1] : 0;
-	    System.out.println("hiii "+a+" Values are "+b1+" and "+b2);
-	}
-	
+public class VarArgDemo
+{
+    // A method that takes variable number of intger arguments.
+    static void fun(int ...a)
+    {
+        System.out.println("Number of arguments: " + a.length);
+ 
+        // using for each loop to display contents of a
+        for (int i: a)
+            System.out.print(i + " ");
+        System.out.println();
+    }
+    
+    static void fun2(String str, int ...a)
+    {
+        System.out.println("String: " + str);
+        System.out.println("Number of arguments is: "+ a.length);
+ 
+        // using for each loop to display contents of a
+        for (int i: a)
+            System.out.print(i + " ");
+ 
+        System.out.println();
+    }
+ 
+    public static void main(String args[])
+    {
+        // Calling the varargs method with different number of parameters
+   
+        fun(100);         // one parameter
+        fun(1, 2, 3, 4);  // four parameters
+        fun();            // no parameter
+        
+     // Calling fun2() with different parameter
+        fun2("Anand Patel", 100, 200);
+        fun2("Anand", 1, 2, 3, 4, 5);
+        fun2("Patel");
+    }
 }
