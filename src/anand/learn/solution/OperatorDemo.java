@@ -4,10 +4,10 @@ public class OperatorDemo {
 
   public static void main(String[] args) {
 
-    int a =13;
-    int b = 15;
+    int a =10;
+    int b = 13;
     
-   System.out.println(10 | 13);
+   System.out.println(a | b);
   }
 
 }

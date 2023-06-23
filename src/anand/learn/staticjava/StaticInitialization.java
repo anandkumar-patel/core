@@ -1,4 +1,4 @@
-package anand.learn.solution;
+package anand.learn.staticjava;
 
 class M
 {
@@ -34,7 +34,7 @@ class N extends M
     }
 }
  
-public class MainClass
+public class StaticInitialization
 {
     public static void main(String[] args)
     {
