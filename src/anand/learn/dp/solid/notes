@@ -1,0 +1,22 @@
+1-Single Responsibility
+	A class should always have one responsibility and 
+	there should be only a single reason to change it.
+	1.1-Bad Implementation
+		Employee class contains personal details, business logic to perform a few calculations, 
+		and DB logic to save/update.
+		Our class is tightly coupled, hard to maintain, multiple reasons to modify this class.
+	1.2-Good Implementation:
+		We can split a single Employee class into multiple classes as per their specific responsibility.
+		It made our class loosely coupled, easy to maintain, and only single reason to modify.
+		
+2-Open Close
+	A Class should be Open for Extension but Closed for Modification.
+	
+	2.1-Bad Implementation
+		EmployeeSalary class calculates salary based on employee type: Permanent and Contractual.
+
+		Issue: In the future, if a new type(Part-time Employee) comes then 
+		the code needs to be modified to calculate the salary based on employee type.
+	
+	2.2-Good Implementation:
+		

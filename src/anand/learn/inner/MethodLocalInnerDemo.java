@@ -9,15 +9,15 @@ class Outer {
 				System.out.println("inside innerMethod");
 			}
 		}
-		class Inner2 extends Inner
-		{
-			
+		class Inner2 extends Inner {
+
 		}
 		Inner y = new Inner2();
 		y.innerMethod();
 	}
 }
-public class MethodLocalInnerDemo  {
+
+public class MethodLocalInnerDemo {
 	public static void main(String[] args) {
 		Outer x = new Outer();
 		x.outerMethod();

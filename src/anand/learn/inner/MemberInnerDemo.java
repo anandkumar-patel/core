@@ -1,7 +1,6 @@
 package anand.learn.inner;
 
-
-class NestedInner{
+class NestedInner {
 	// Simple nested inner class
 	class Inner {
 		public void show() {
@@ -9,6 +8,7 @@ class NestedInner{
 		}
 	}
 }
+
 public class MemberInnerDemo {
 	public static void main(String[] args) {
 		NestedInner.Inner in = new NestedInner().new Inner();

@@ -12,5 +12,8 @@ public class StaticNestedDemo {
 			outerMethod();
 		}
 	}
-
+	
+	public static void main(String[] args) {
+		System.out.println("inside outer class main Method");
+	}
 }

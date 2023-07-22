@@ -1,0 +1,17 @@
+package anand.learn.dp.solid.single.good;
+
+public class EmployeeService {
+
+	// business logic
+	public long calculateEmployeeSalary(Employee emp) {
+		return 0;
+	}
+
+	public long calculateEmployeeLeaves(Employee emp) {
+		return 0;
+	}
+
+	public long calculateTaxOnSalary(Employee emp) {
+		return 0;
+	}
+}

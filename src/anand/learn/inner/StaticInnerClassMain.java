@@ -25,10 +25,10 @@ public class StaticInnerClassMain {
 		public void display() {
 			System.out.println("In Static nested class instance display() method");
 			System.out.println("Static variable of outer class " + staticVar);
-			//System.out.println("member variable of outer class " + memberVar);
+			// System.out.println("member variable of outer class " + memberVar);
 			System.out.println("member variable of inner class " + memberVarIn);
 			System.out.println("Out Static nested class instance display() method");
-		
+
 		}
 	}
 
@@ -44,4 +44,3 @@ public class StaticInnerClassMain {
 		staticNested.display();
 	}
 }
-

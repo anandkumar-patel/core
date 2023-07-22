@@ -23,8 +23,8 @@ class DerivedClass extends Base {
 public class CallHirerchy {
 
 	public static void main(String[] args) {
-		// new DerivedClass(); // base-default, derived default
-		// new DerivedClass("Hiiiiii");//base-default, derived parameterized
+		new DerivedClass(); // base-default, derived default
+		new DerivedClass("Hiiiiii");//base-default, derived parameterized
 	}
 
 }
