@@ -9,11 +9,11 @@ public class ClassB {
 		} catch (InterruptedException e) {
 			System.out.println(e.getMessage());
 		}
-		System.out.println("Thread2 trying to call classb last method");
+		System.out.println("Thread2 trying to call classB last method");
 		obj.last();
 	}
 
 	public synchronized void last() {
-		System.out.println("Inside classb last method");
+		System.out.println("Inside classB last method");
 	}
 }
