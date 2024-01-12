@@ -7,76 +7,48 @@ import java.util.stream.Collectors;
 
 public class BiPredicateDemo {
 	public static void main(String[] args) {
+		List<Person> people = Arrays.asList(new Person("Alice", 28, 60000.0), new Person("Bob", 35, 75000.0),
+				new Person("Charlie", 22, 50000.0), new Person("David", 40, 90000.0));
 
-        List<Domain> domains = Arrays.asList(new Domain("google.com", 1),
-                new Domain("i-am-spammer.com", 10),
-                new Domain("mkyong.com", 0),
-                new Domain("microsoft.com", 2));
+		// BiPredicate to filter people based on age and salary
+		BiPredicate<Integer, Double> filterCondition = (age, salary) -> age >= 30 && salary >= 70000.0;
 
-        BiPredicate<String, Integer> bi = (domain, score) -> {
-            return (domain.equalsIgnoreCase("google.com") || score == 0);
-        };
+		// Filtering the collection using BiPredicate
+		List<Person> filteredPeople = people.stream()
+				.filter(person -> filterCondition.test(person.getAge(), person.getSalary()))
+				.collect(Collectors.toList());
 
-        // if google or score == 0
-        List<Domain> result = filterBadDomain(domains, bi);
-        System.out.println(result); // google.com, mkyong.com
-
-        //  if score == 0
-        List<Domain> result2 = filterBadDomain(domains, (domain, score) -> score == 0);
-        System.out.println(result2); // mkyong.com, microsoft.com
-
-        // if start with i or score > 5
-        List<Domain> result3 = filterBadDomain(domains, (domain, score) -> domain.startsWith("i") && score > 5);
-        System.out.println(result3); // i-am-spammer.com
-
-        // chaining with or
-        List<Domain> result4 = filterBadDomain(domains, bi.or(
-                (domain, x) -> domain.equalsIgnoreCase("microsoft.com"))
-        );
-        System.out.println(result4); // google.com, mkyong.com, microsoft.com
-
-
-    }
-
-    public static <T extends Domain> List<T> filterBadDomain(
-            List<T> list, BiPredicate<String, Integer> biPredicate) {
-
-        return list.stream()
-                .filter(x -> biPredicate.test(x.getName(), x.getScore()))
-                .collect(Collectors.toList());
-
-    }
+		// Displaying the filtered list
+		System.out.println("People meeting the criteria:");
+		filteredPeople.forEach(System.out::println);
+	}
 }
 
-class Domain {
+class Person {
+	private String name;
+	private int age;
+	private double salary;
 
-    String name;
-    Integer score;
-
-    public Domain(String name, Integer score) {
-        this.name = name;
-        this.score = score;
-    }
+	public Person(String name, int age, double salary) {
+		this.name = name;
+		this.age = age;
+		this.salary = salary;
+	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public int getAge() {
+		return age;
 	}
 
-	public Integer getScore() {
-		return score;
-	}
-
-	public void setScore(Integer score) {
-		this.score = score;
+	public double getSalary() {
+		return salary;
 	}
 
 	@Override
 	public String toString() {
-		return "Domain [name=" + name + ", score=" + score + "]";
+		return "Person{" + "name='" + name + '\'' + ", age=" + age + ", salary=" + salary + '}';
 	}
-
 }

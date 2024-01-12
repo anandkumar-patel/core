@@ -11,7 +11,7 @@ public class BubbleSort {
 		bubbleSort(arr);
 		System.out.println(Arrays.toString(arr));
 	}
-	
+
 	public static void bubbleSort(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {
 			boolean isSorted = true;
@@ -28,8 +28,7 @@ public class BubbleSort {
 			}
 		}
 	}
-	
-	
+
 	// bubble sort using recursion
 	public void bubbleSort(int arr[], int n) {
 		// Base case
@@ -50,36 +49,23 @@ public class BubbleSort {
 		// Largest element is fixed, recur for remaining array
 		bubbleSort(arr, n - 1);
 	}
-
-	/* Prints the array */
-	void printArray(int arr[]) {
-		int n = arr.length;
-		for (int i = 0; i < n; ++i)
-			System.out.print(arr[i] + " ");
-		System.out.println();
-	}
-
 }
 
 /*
- * This sorting algorithm works on principle of largest element get popped up at last position first,
- * then second largest .... until smallest element reached. As it's name suggest bigger bubble get out first from water.
+ * This sorting algorithm works on principle of largest element get popped up at
+ * last position first, then second largest .... until smallest element reached.
+ * As it's name suggest bigger bubble get out first from water.
  * 
  * Following are the Time and Space complexity for the Bubble Sort algorithm.
- *  	Worst Case Time Complexity [ Big-O ]: O(n2)
- *  	Best Case Time Complexity [Big-omega]: O(n)
- *  	Average Time Complexity [Big-theta]: O(n2)
- *  	Space Complexity: O(1)
+ * Worst Case Time Complexity [ Big-O ]: O(n2) Best Case Time Complexity
+ * [Big-omega]: O(n) Average Time Complexity [Big-theta]: O(n2) Space
+ * Complexity: O(1)
  * 
  * 
  * 
- * Complexity Analysis of Bubble Sort
- * 		In Bubble Sort, n-1 comparisons will be done in the 1st pass, 
- * 		n-2 in 2nd pass, 
- * 		n-3 in 3rd pass and so on. 
+ * Complexity Analysis of Bubble Sort In Bubble Sort, n-1 comparisons will be
+ * done in the 1st pass, n-2 in 2nd pass, n-3 in 3rd pass and so on.
  * 
- * So the total number of comparisons will be,
- * 		= (n-1) + (n-2) + (n-3) + ..... + 3 + 2 + 1
- * 	Sum = n(n-1)/2
- * 	i.e O(n2)
+ * So the total number of comparisons will be, = (n-1) + (n-2) + (n-3) + ..... +
+ * 3 + 2 + 1 Sum = n(n-1)/2 i.e O(n2)
  */

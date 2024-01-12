@@ -5,6 +5,7 @@ public interface Arithmetic {
 
 	public int operation(int a, int b);
 
+	
 	// default method  ....any number of default method
 	default int sum(int a, int b) {
 		return a + b;

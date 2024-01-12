@@ -9,8 +9,7 @@ public class ArraysClassDemo {
 		// To print the elements in one line
 		System.out.println(Arrays.toString(ar));
 
-		// To sort a specific range of array in
-		// ascending order.
+		// To sort a specific range of array in ascending order.
 		Arrays.sort(ar, 0, 4);
 		System.out.println("Sorted array in range" + " of 0-4 =>\n" + Arrays.toString(ar));
 
@@ -42,8 +41,7 @@ public class ArraysClassDemo {
         System.out.println("Array filled with 0 "+
           "from 0 to 3 => \n" + Arrays.toString(ar));
  
-        // To fill complete array with a particular
-        // value
+        // To fill complete array with a particular value
         Arrays.fill(ar, 10);
         System.out.println("Array completely filled"+
                   " with 10=>\n"+Arrays.toString(ar));

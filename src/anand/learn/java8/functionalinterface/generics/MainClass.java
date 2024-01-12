@@ -10,7 +10,7 @@ public class MainClass {
 		ArgumentsProcessor<Double> floatProcessObj = (i1, i2)-> i1*i2;
 		System.out.println(floatProcessObj.process(12.5, 13.4));
 		
-		//ArgumentsProcessor<String> floatProcessObj = (i1, i2)-> i1*i2;
+		//ArgumentsProcessor<String> stringProcessObj = (i1, i2)-> i1*i2;
 	}
 
 }

@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 /*  Class SinglyLinkedList  */
 public class SinglyLinkedList {
+	private static Scanner scan;
+
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
+		scan = new Scanner(System.in);
 		/* Creating object of class linkedList */
 		LinkedList list = new LinkedList();
 		System.out.println("Singly Linked List Test\n");

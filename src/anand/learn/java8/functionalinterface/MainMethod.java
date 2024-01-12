@@ -11,14 +11,17 @@ public class MainMethod {
 			}
 		};
 
-		System.out.println(obj.operation(11, 13));
-		System.out.println(obj.sum(11, 13));
-		System.out.println(Arithmetic.mul(5, 6));
+		System.out.println("obj.operation(3, 5) " + obj.operation(3, 5));
+		System.out.println("obj.sum(3, 5) " + obj.sum(3, 5));
+		System.out.println("Arithmetic.sub(3, 5) " + Arithmetic.sub(3, 5));
+		System.out.println("Arithmetic.mul(3, 5) "+Arithmetic.mul(3, 5));
 
 		// Implementing Arithmetic interface using Lambda expression
-		Arithmetic obj1 = (int a, int b) -> a / b;
+		Arithmetic obj1 = (int a, int b) -> a * b;
 
-		System.out.println(obj1.operation(11, 13));
-		System.out.println(obj1.sum(11, 13));
+		System.out.println("obj1.operation(2, 5) " + obj1.operation(2, 5));
+		System.out.println("obj1.sum(2, 5) " + obj1.sum(2, 5));
+		System.out.println("Arithmetic.sub(2, 5) " + Arithmetic.sub(2, 5));
+		System.out.println("Arithmetic.mul(2, 5) "+Arithmetic.mul(2, 5));
 	}
 }

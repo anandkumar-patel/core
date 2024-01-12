@@ -1,14 +1,14 @@
 package anand.learn.collection.ll.sll;
 
 /*  Class Node  */
-class Node {
+public class Node {
 	protected int data;
 	protected Node link;
 
 	/* Constructor */
 	public Node() {
-		link = null;
 		data = 0;
+		link = null;
 	}
 
 	/* Constructor */

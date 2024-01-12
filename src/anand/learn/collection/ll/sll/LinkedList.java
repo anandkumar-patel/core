@@ -1,5 +1,8 @@
 package anand.learn.collection.ll.sll;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /* Class linkedList */
 public class LinkedList {
 	protected Node start;
@@ -118,5 +121,35 @@ public class LinkedList {
 			ptr = ptr.getLink();
 		}
 		System.out.print(ptr.getData() + "\n");
+	}
+	
+	public int findTheMiddleNodeData() {
+		Node slow = start;
+		Node fast = start;
+		while(null != fast && null != fast.getLink()) {
+			slow = slow.getLink();
+			fast = fast.getLink().getLink();
+		}
+		
+		return slow.getData();
+	}
+	
+	public List<Integer> findTheMiddleNodesData() {
+		Node slow = start;
+		Node fast = start;
+		List<Integer> middles = new ArrayList<>(2);
+		
+		while(null != fast && null != fast.getLink()) {
+			slow = slow.getLink();
+			fast = fast.getLink().getLink();
+		}
+		if(fast == null) {
+			middles.add(slow.getData());
+		} else {
+			middles.add(slow.getData());
+			middles.add(slow.getLink().getData());
+		}
+		
+		return middles;
 	}
 }
