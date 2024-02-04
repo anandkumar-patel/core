@@ -1,23 +1,20 @@
 package anand.learn.modifiers;
 
-import java.util.logging.Logger;
 
 public class PrivateDemo {
 
-	private static final Logger log = Logger.getLogger(PrivateModifier.class.getName());
 
 	public static void main(String[] args) {
 
 		// PrivateModifier obj = new PrivateModifier(); // this is not accesible
 
 		PrivateModifier obj1 = PrivateModifier.getInstance(12, "Patel");
-		log.info(obj1.toString());
+		System.out.println(obj1.toString());
 	}
 
 }
 
 class PrivateModifier {
-	private static final Logger log = Logger.getLogger(PrivateModifier.class.getName());
 	private int id;
 	private String name;
 
@@ -34,7 +31,7 @@ class PrivateModifier {
 	}
 
 	private void privateMethod() {
-		log.info("Hello " + name + " your id is :" + id);
+		System.out.println("Hello " + name + " your id is :" + id);
 	}
 
 	@Override

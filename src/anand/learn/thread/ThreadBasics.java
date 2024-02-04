@@ -12,7 +12,7 @@ public class ThreadBasics {
 		Thread t1 = new Thread(task);
 		Thread t2 = new Thread(task);
 
-		// set as deamon thread
+		// set as daemon thread
 		t1.setDaemon(true);
 		t2.setDaemon(true);
 

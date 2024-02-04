@@ -1,7 +1,5 @@
 package anand.learn.numeric;
 
-import java.math.BigDecimal;
-
 public class IsumberEven {
 
     

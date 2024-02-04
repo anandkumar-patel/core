@@ -1,8 +1,6 @@
 package anand.learn.dp.producerconsumer;
 
 import java.util.concurrent.BlockingQueue;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public  class Producer implements Runnable {
 
@@ -18,7 +16,7 @@ public  class Producer implements Runnable {
                 System.out.println("Produced: " + i);
                 sharedQueue.put(i);
             } catch (InterruptedException ex) {
-                Logger.getLogger(Producer.class.getName()).log(Level.SEVERE, null, ex);
+            	System.err.println(ex);
             }
         }
     }

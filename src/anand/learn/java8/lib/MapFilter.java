@@ -39,7 +39,7 @@ public class MapFilter {
 		
 		System.out.println("map data 1 :"+collect);
 			
-		// or like this -here rplaced lambda with method reference
+		// or like this -here replaced lambda with method reference
 		Map<Integer, String> collect1 = map.entrySet().stream()
 			.filter(x -> x.getKey() == 3)
 			.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));

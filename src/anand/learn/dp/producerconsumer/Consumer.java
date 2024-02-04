@@ -1,8 +1,7 @@
 package anand.learn.dp.producerconsumer;
 
 import java.util.concurrent.BlockingQueue;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public  class Consumer implements Runnable{
 
@@ -17,7 +16,7 @@ public  class Consumer implements Runnable{
             try {
                 System.out.println("Consumed: "+ sharedQueue.take());
             } catch (InterruptedException ex) {
-                Logger.getLogger(Consumer.class.getName()).log(Level.SEVERE, null, ex);
+            	System.err.println(ex);
             }
         }
     }

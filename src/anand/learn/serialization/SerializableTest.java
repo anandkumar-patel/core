@@ -26,5 +26,6 @@ public class SerializableTest implements Serializable{
         FileInputStream fis = new FileInputStream(f);
         ois = new ObjectInputStream(fis);
         SerializableTest t1 = (SerializableTest) ois.readObject();
+        System.out.println(t1.toString());
     }
 }
