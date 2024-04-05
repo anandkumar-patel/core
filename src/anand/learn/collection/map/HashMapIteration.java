@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class HashMapIteration {
@@ -18,8 +19,8 @@ public class HashMapIteration {
     	income.put("ananya", 20349);
 
         // looping through map using foreach loop
-        Set<Map.Entry<String, Integer>> entrySet = income.entrySet();
-        for (Map.Entry<String, Integer> entry : entrySet) {
+        Set<Entry<String, Integer>> entrySet = income.entrySet();
+        for (Entry<String, Integer> entry : entrySet) {
         	String name = entry.getKey();
             Integer money = entry.getValue();
            System.out.print("Name : "+name+ ", salary : "+money);

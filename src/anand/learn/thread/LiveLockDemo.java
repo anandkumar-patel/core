@@ -8,8 +8,8 @@ public class LiveLockDemo {
 		Account acct1 = new Account(101, 5000);
 		Account acct2 = new Account(102, 7000);
 		// Creating two threads
-		Thread thread1 = new Thread(new Operation(acct1, acct2, 100));
-		Thread thread2 = new Thread(new Operation(acct2, acct1, 100));
+		Thread thread1 = new Thread(new Operation(acct1, acct2, 200));
+		Thread thread2 = new Thread(new Operation(acct2, acct1, 300));
 
 		thread1.start();
 		thread2.start();
@@ -26,12 +26,7 @@ class Account {
 		this.balance = balance;
 	}
 
-	/**
-	 * Method for depositing amount
-	 * 
-	 * @param amount
-	 * @return
-	 */
+	//Method for depositing amount
 	public boolean deposit(int amount) {
 		System.out.println("In deposit method");
 		if (this.lock.tryLock()) {
@@ -39,7 +34,6 @@ class Account {
 				// Simulating some delay
 				Thread.sleep(500);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			System.out.println("deposit in " + this.acctNum + " for " + Thread.currentThread().getName());
@@ -49,12 +43,7 @@ class Account {
 		return false;
 	}
 
-	/**
-	 * Method for withdrawing amount
-	 * 
-	 * @param amount
-	 * @return
-	 */
+	//Method for withdrawing amount
 	public boolean withdraw(int amount) {
 		System.out.println("In withdraw method");
 		if (this.lock.tryLock()) {
@@ -62,7 +51,6 @@ class Account {
 				// Simulating some delay
 				Thread.sleep(500);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			System.out.println("Withdrawn from " + this.acctNum + " for " + Thread.currentThread().getName());
@@ -73,7 +61,7 @@ class Account {
 	}
 
 	public boolean transact(Account targetAcct, int amount) {
-		// System.out.println("In transact method " + targetAcct);
+		System.out.println("In transact method " + targetAcct);
 		boolean flag = false;
 		// If you can withdraw from the source account and
 		// deposit it into target account then only return true
@@ -103,7 +91,6 @@ class Operation implements Runnable {
 
 	@Override
 	public void run() {
-
 		sourceAccount.transact(targetAccount, amount);
 	}
 }

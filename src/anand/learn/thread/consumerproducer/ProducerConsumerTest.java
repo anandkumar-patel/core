@@ -11,9 +11,9 @@ public class ProducerConsumerTest {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		final Queue sharedQ = new LinkedList<Integer>();
+		final Queue<Integer> sharedQ = new LinkedList<>();
 
-		Thread consumerThread = new Thread(new Consumer(sharedQ, 4), "CONSUMER");
+		Thread consumerThread = new Thread(new Consumer(sharedQ), "CONSUMER");
 		Thread producerThread = new Thread(new Producer(sharedQ, 4), "PRODUCER");
 
 		producerThread.start();

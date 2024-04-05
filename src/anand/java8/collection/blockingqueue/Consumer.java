@@ -3,9 +3,9 @@ package anand.java8.collection.blockingqueue;
 import java.util.concurrent.BlockingQueue;
 
 public class Consumer implements Runnable {
-	private final BlockingQueue queue;
+	private final BlockingQueue<Book> queue;
 
-	Consumer(BlockingQueue q) {
+	Consumer(BlockingQueue<Book> q) {
 		queue = q;
 	}
 

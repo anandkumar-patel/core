@@ -1,6 +1,5 @@
 package anand.learn.dp.creational.singleton;
 
-
 public class Singleton {
 
 	private static Singleton obj = null;
@@ -8,6 +7,12 @@ public class Singleton {
 	private String initialValue;
 
 	private Singleton(String initialValue) {
+		// if someone tries to create a second instance via reflection
+		if(null != obj) {
+			throw new IllegalStateException(
+					"Singleton instance already exists. "
+					+ "Use getInstance() method to get the instance.");
+		}
 		this.initialValue = initialValue;
 	}
 
@@ -19,7 +24,6 @@ public class Singleton {
 					obj = new Singleton(initialValue);
 				}
 			}
-
 		}
 		return obj;
 

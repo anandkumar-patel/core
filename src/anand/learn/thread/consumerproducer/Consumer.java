@@ -13,12 +13,10 @@ import java.util.Queue;
  *
  */
 public class Consumer implements Runnable {
-	private final Queue sharedQ;
-	private int maxSize;
+	private final Queue<Integer> sharedQ;
 
-	public Consumer(Queue sharedQ, int maxSize) {
+	public Consumer(Queue<Integer> sharedQ) {
 		this.sharedQ = sharedQ;
-		this.maxSize = maxSize;
 	}
 
 	@Override

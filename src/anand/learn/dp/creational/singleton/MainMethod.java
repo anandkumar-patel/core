@@ -1,6 +1,5 @@
 package anand.learn.dp.creational.singleton;
 
-
 public class MainMethod {
 
 	public static void main(String[] args) {
@@ -19,14 +18,6 @@ public class MainMethod {
 		System.out.println("hashcode of obj2 : "+obj2.hashCode());
 		System.out.println("hashcode of obj3 : "+obj3.hashCode());
 		System.out.println("hashcode of obj4 : "+obj4.hashCode());
-		
-		
-		
-		BillPughSingleton obj5 = BillPughSingleton.getInstance();
-		BillPughSingleton obj6 = BillPughSingleton.getInstance();
-		BillPughSingleton obj7 = (BillPughSingleton) obj2.clone();
-		System.out.println("hashcode of obj5 : "+obj5.hashCode());
-		System.out.println("hashcode of obj6 : "+obj6.hashCode());
-	}
 
+	}	
 }

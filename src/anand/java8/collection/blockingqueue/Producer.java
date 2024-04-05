@@ -3,9 +3,9 @@ package anand.java8.collection.blockingqueue;
 import java.util.concurrent.BlockingQueue;
 
 public class Producer implements Runnable {
-	private final BlockingQueue queue;
+	private final BlockingQueue<Book> queue;
 
-	Producer(BlockingQueue q) {
+	Producer(BlockingQueue<Book> q) {
 		queue = q;
 	}
 

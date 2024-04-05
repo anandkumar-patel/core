@@ -4,7 +4,7 @@ public class BinaryGapDemo {
 
 	public static void main(String[] args) {
 		BinaryGapDemo obj = new BinaryGapDemo();
-		int number =9;
+		int number =65;
 		int gap = obj.solution(number);
 		System.out.println("Binaray gap in "+number+" is :" + gap);
 	}

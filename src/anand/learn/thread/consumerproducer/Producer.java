@@ -12,10 +12,10 @@ import java.util.Random;
  *
  */
 public class Producer implements Runnable {
-	private final Queue sharedQ;
+	private final Queue<Integer> sharedQ;
 	private int maxSize;
 
-	public Producer(Queue sharedQ, int maxSize) {
+	public Producer(Queue<Integer> sharedQ, int maxSize) {
 		this.sharedQ = sharedQ;
 		this.maxSize = maxSize;
 	}
@@ -41,7 +41,6 @@ public class Producer implements Runnable {
 				sharedQ.notify();
 
 			}
-
 		}
 	}
 }

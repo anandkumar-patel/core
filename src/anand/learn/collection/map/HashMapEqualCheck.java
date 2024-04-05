@@ -24,7 +24,6 @@ public class HashMapEqualCheck
  
         map3.put("1", "A");
         map3.put("2", "B");
-        map3.put("3", "C");
         map3.put("3", "D");
          
         System.out.println(map1.equals(map2));  //true
