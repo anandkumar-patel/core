@@ -6,7 +6,11 @@ public class DaemonThreadExample {
         Thread daemonThread = new Thread(new DaemonTask());
         daemonThread.setDaemon(true); // Marking the thread as daemon
         daemonThread.start(); // Start the daemon thread
-
+        try {
+			Thread.sleep(2000);
+		} catch (InterruptedException ie) {
+			System.err.println("thread is intrupted...");
+		}
         // Main thread
         System.out.println("Main thread exiting...");
     }
@@ -32,5 +36,8 @@ class DaemonTask implements Runnable {
  * 
  *  POINT-2 : Once control comes out from parent thread, the daemon thread is 
  *  		  automatically terminated.
+ *  
+ *  NOTE : To check the normal thread and daemon thread behavior difference comment
+ *  		line -setDaemon(true) or make it's value false
  *   
  */

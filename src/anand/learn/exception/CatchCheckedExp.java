@@ -5,17 +5,16 @@ public class CatchCheckedExp {
 		try {
 			System.out.println("I am in try block");
 		}
-		//uncomment it
-		//catch (FileNotFoundException a) { // will not compile
-		//}
-		catch (RuntimeException a) { // will compile
+//		catch (FileNotFoundException a) { // will not compile
+//		}
+		catch (NullPointerException a) { // will compile
 		}
 	}
 
 }
 /*
-If a method not throwing a checked exception we can't catch it. ex-File....
+If a method not throwing a checked exception we can't catch it. ex-FileNotFoundException
 
-But for unchecked exception its valid
+But for unchecked exception its valid. ex- NullPointerException
 
 */

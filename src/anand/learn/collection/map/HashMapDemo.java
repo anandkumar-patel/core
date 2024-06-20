@@ -1,5 +1,6 @@
 package anand.learn.collection.map;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -28,9 +29,9 @@ public class HashMapDemo {
 		
 		
 		System.out.println("===============================");
-		Map<String,List> data = new HashMap<>();
-		
-		System.out.println((List)data.get("Data"));
+		Map<String,List<Integer>> data = new HashMap<>();
+		data.put("data", new ArrayList<Integer>(values));
+		System.out.println((List<Integer>)data.get("data"));
 		
 		System.out.println("===============================");
 		for(Entry entry : priceMap.entrySet()) {

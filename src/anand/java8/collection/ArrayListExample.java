@@ -9,7 +9,7 @@ public class ArrayListExample {
         // create and initialize
         List<Integer> lst = new ArrayList<>();
         lst.add(3);
-        lst.add(1);
+        lst.add(1); 
         lst.add(2);
         System.out.println(lst);
 

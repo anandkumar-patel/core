@@ -5,20 +5,20 @@ import java.util.List;
 
 /* Class linkedList */
 public class SinglyLinkedList {
-	protected Node start;
+	protected Node root;
 	protected Node end;
 	public int size;
 
 	/* Constructor */
 	public SinglyLinkedList() {
-		start = null;
+		root = null;
 		end = null;
 		size = 0;
 	}
 
 	/* Function to check if list is empty */
 	public boolean isEmpty() {
-		return start == null;
+		return root == null;
 	}
 
 	/* Function to get size of list */
@@ -28,40 +28,40 @@ public class SinglyLinkedList {
 
 	/* Function to insert an element at beginning */
 	public void insertAtStart(int val) {
-		Node nptr = new Node(val);
+		Node newNode = new Node(val);
 		size++;
-		if (start == null) {
-			start = nptr;
-			end = start;
+		if (root == null) {
+			root = newNode;
+			end = root;
 		} else {
-			nptr.setNext(start);
-			start = nptr;
+			newNode.setNext(root);
+			root = newNode;
 		}
 	}
 
 	/* Function to insert an element at end */
 	public void insertAtEnd(int val) {
-		Node nptr = new Node(val);
+		Node newNode = new Node(val);
 		size++;
-		if (start == null) {
-			start = nptr;
-			end = start;
+		if (root == null) {
+			root = newNode;
+			end = root;
 		} else {
-			end.setNext(nptr);
-			end = nptr;
+			end.setNext(newNode);
+			end = newNode;
 		}
 	}
 
 	/* Function to insert an element at position */
 	public void insertAtPos(int val, int pos) {
-		Node nptr = new Node(val);
-		Node ptr = start;
+		Node newNode = new Node(val);
+		Node ptr = root;
 		pos = pos - 1;
 		for (int i = 1; i < size; i++) {
 			if (i == pos) {
 				Node tmp = ptr.getNext();
-				ptr.setNext(nptr);
-				nptr.setNext(tmp);
+				ptr.setNext(newNode);
+				newNode.setNext(tmp);
 				break;
 			}
 			ptr = ptr.getNext();
@@ -72,13 +72,13 @@ public class SinglyLinkedList {
 	/* Function to delete an element at position */
 	public void deleteAtPos(int pos) {
 		if (pos == 1) {
-			start = start.getNext();
+			root = root.getNext();
 			size--;
 			return;
 		}
 		if (pos == size) {
-			Node s = start;
-			Node t = start;
+			Node s = root;
+			Node t = root;
 			while (s != end) {
 				t = s;
 				s = s.getNext();
@@ -88,7 +88,7 @@ public class SinglyLinkedList {
 			size--;
 			return;
 		}
-		Node ptr = start;
+		Node ptr = root;
 		pos = pos - 1;
 		for (int i = 1; i < size - 1; i++) {
 			if (i == pos) {
@@ -109,13 +109,13 @@ public class SinglyLinkedList {
 			System.out.print("empty\n");
 			return;
 		}
-		if (start.getNext() == null) {
-			System.out.println(start.getData());
+		if (root.getNext() == null) {
+			System.out.println(root.getData());
 			return;
 		}
-		Node ptr = start;
-		System.out.print(start.getData() + "->");
-		ptr = start.getNext();
+		Node ptr = root;
+		System.out.print(root.getData() + "->");
+		ptr = root.getNext();
 		while (ptr.getNext() != null) {
 			System.out.print(ptr.getData() + "->");
 			ptr = ptr.getNext();
@@ -124,8 +124,8 @@ public class SinglyLinkedList {
 	}
 	
 	public int findTheMiddleNodeData() {
-		Node slow = start;
-		Node fast = start;
+		Node slow = root;
+		Node fast = root;
 		while(null != fast && null != fast.getNext()) {
 			slow = slow.getNext();
 			fast = fast.getNext().getNext();
@@ -134,8 +134,8 @@ public class SinglyLinkedList {
 	}
 	
 	public List<Integer> findTheMiddleNodesData() {
-		Node slow = start;
-		Node fast = start;
+		Node slow = root;
+		Node fast = root;
 		List<Integer> middles = new ArrayList<>(2);
 		
 		while(null != fast && null != fast.getNext()) {

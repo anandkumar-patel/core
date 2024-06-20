@@ -1,5 +1,7 @@
 package anand.learn.thread.pool;
 
+import java.util.Random;
+
 public class WorkerThread implements Runnable {
 	private int counter;
 
@@ -8,11 +10,12 @@ public class WorkerThread implements Runnable {
 	}
 
 	public void run() {
-		System.out.println(Thread.currentThread().getName() + " (Start), counter = " + counter);
+		Random r = new Random();
+		int rn = r.nextInt();
+		System.out.println(Thread.currentThread().getName() + " (Start),"+rn+" counter = " + counter);
 		processmessage();// call processmessage method that sleeps the thread for 2 seconds
-		System.out.println(Thread.currentThread().getName() + " (End)");// prints thread name
+		System.out.println(Thread.currentThread().getName() + " (End),"+rn+"  counter = " + counter);
 	}
-
 	private void processmessage() {
 		try {
 			Thread.sleep(5000);

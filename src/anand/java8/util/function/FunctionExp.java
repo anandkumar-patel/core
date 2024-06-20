@@ -18,6 +18,7 @@ public class FunctionExp {
 
 		Function<String, String> identityFun = Function.identity();
 		System.out.println(identityFun.apply("Anand"));
+		
 	}
 
 }

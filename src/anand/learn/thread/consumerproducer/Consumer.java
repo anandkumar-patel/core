@@ -25,7 +25,7 @@ public class Consumer implements Runnable {
 			synchronized (sharedQ) {
 				while (sharedQ.isEmpty()) {
 					try {
-						System.out.println("Que is Empty");
+						System.out.println("Queue is Empty");
 						sharedQ.wait();
 					} catch (InterruptedException e) {
 						e.printStackTrace();

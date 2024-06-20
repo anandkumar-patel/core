@@ -6,15 +6,12 @@ public class ReturnValueFromTryCatchFinally {
 	}
 
 	static String methodReturningValue() {
-		String s = null;
 		try {
-			s = "return value from try block";
-			return s;
+			return "return value from try block";
 		} catch (Exception e) {
-			s = s + "return value from catch block";
-			return s;
+			return "return value from catch block";
 		} finally {
-			return s + "return value from finally block";
+			return "return value from finally block";
 		}
 	}
 }

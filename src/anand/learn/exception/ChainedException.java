@@ -6,7 +6,7 @@ public class ChainedException {
 	public static void main(String[] args) {
 		try {
 			// Creating an exception
-			NumberFormatException ex = new NumberFormatException("Exception");
+			NumberFormatException ex = new NumberFormatException("Exception message from here..");
 
 			// Setting a cause of the exception
 			ex.initCause(new NullPointerException("This is actual cause of the exception"));

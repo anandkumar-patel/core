@@ -15,8 +15,8 @@ public class HashMapKeyEmployee {
 		map1.put(emp2, 1);
 		System.out.println("Size of map is :"+ map1.size());
 		
-		Integer in1 = new Integer(1);
-		Integer in2 =  new Integer(1);
+		Integer in1 = Integer.valueOf(1);
+		Integer in2 =  Integer.valueOf(1);
 		Map<Integer,String> map2 = new HashMap<>();
 		map2.put(in1, "data");
 		map2.put(in2, "data");

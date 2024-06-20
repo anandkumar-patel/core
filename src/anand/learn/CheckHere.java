@@ -3,41 +3,50 @@ package anand.learn;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+import anand.java8.Employee;
 
 public class CheckHere {
 
 	public static void main(String[] args) {
+		list2map();
+	}
+	
+	
+	private static List<Employee> getEmployeeList() {
+		List<Employee> empList = new ArrayList<>();
+		empList.add(new Employee(1112, "Anand", 1234L, true));
+		empList.add(new Employee(1113, "Patel", 1245L, true));
+		empList.add(new Employee(1114, "Kumar", 2123L, false));
+		empList.add(new Employee(1115, "Yas", 3421L, false));
+		empList.add(new Employee(1116, "Singh", 1428L, true));
+		empList.add(new Employee(1117, "Yadav", 2534L, true));
+		empList.add(new Employee(1118, "Udham", 2495L, true));
+		empList.add(new Employee(1119, "Singh", 1923L, false));
+		empList.add(new Employee(1120, "Brijesh", 3242L, false));
+		empList.add(new Employee(1121, "Patel", 1258L, true));
+		return empList;
+	}
+	public static void positionOfVowelsInString() {
 
-		HashSet shortSet = new HashSet();
-		for (short i = 0; i < 10; i++) {
-			shortSet.add(i);
-			boolean removed = shortSet.remove((short)(i - 1));
-			System.out.println(removed);
-		}
-		System.out.println(shortSet.size());
+		String input = "Hello, WorldO!";
+		// Get the positions of vowels using Java 8 streams
+		List<Integer> vowelPositions = IntStream.range(0, input.length())
+				.filter(i -> "aeiouAEIOU".indexOf(input.charAt(i)) != -1) // Filter out positions with vowels
+				.boxed().collect(Collectors.toList());
 
-		HashMap<String, String> map = new HashMap<>() {
-			{
-				put("1", "ONE");
-			}
-			{
-				put("2", "TWO");
-			}
-			{
-				put("3", "THREE");
-			}
-		};
-		Set<String> keySet = map.keySet();
-		for (String string : keySet) {
-			System.out.println(string + " ->" + map.get(string));
-		}
+		// Print the positions of vowels
+		System.out.println("Positions of vowels in the string:");
+		vowelPositions.forEach(position -> System.out.println(position));
+
+	
 	}
 
 	public static void list2map() {
@@ -48,14 +57,20 @@ public class CheckHere {
 		persons.add(new Person(4, "Urmila"));
 		persons.add(new Person(5, "Ananya"));
 		persons.add(new Person(6, "Surya"));
-
-		persons.forEach(e -> System.out.print(e.toString()));
-		Map<Integer, Person> pMap = new HashMap<>();
-		for (Person p : persons) {
-			pMap.put(p.getId(), p);
+		
+		
+		// way-1
+		Map<Integer,Person> map1 = new HashMap<Integer, Person>();
+		persons.forEach(e->map1.put(e.getId(), e));
+		
+		for(Integer key : map1.keySet()) {
+			System.out.println(map1.get(key));
 		}
-		for (int i : pMap.keySet()) {
-			System.out.println(pMap.get(i).toString());
+		
+		// way-2
+		Map<Integer,String> map2 = persons.stream().collect(Collectors.toMap(Person::getId, Person::getName));
+		for(Integer key : map2.keySet()) {
+			System.out.println(map2.get(key));
 		}
 	}
 

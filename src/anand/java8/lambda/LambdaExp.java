@@ -6,6 +6,7 @@ public class LambdaExp {
 		LambdaExp tester = new LambdaExp();
 
 		//with type declaration
+		//1-Variable Declarations
 		MathOperation addition = (int a, int b) -> a + b;
 
 		//with out type declaration
@@ -22,12 +23,8 @@ public class LambdaExp {
 		System.out.println("10 x 5 = " + tester.operate(10, 5, multiplication));
 		System.out.println("10 / 5 = " + tester.operate(10, 5, division));
 	}
-	@FunctionalInterface
-	interface MathOperation {
-		int operation(int a, int b);
-	}
 
-
+	// 2- Method Arguments:
 	private int operate(int a, int b, MathOperation mathOperation){
 		return mathOperation.operation(a, b);
 	}

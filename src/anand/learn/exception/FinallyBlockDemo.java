@@ -16,7 +16,7 @@ public class FinallyBlockDemo implements Runnable{
    }
    public static void main(String[] args)throws Exception {
        Thread t = new Thread(new FinallyBlockDemo());
-      //t.setDaemon(true);
+       t.setDaemon(true);
        t.start();
        //Main thread will sleep
        Thread.sleep(1000);

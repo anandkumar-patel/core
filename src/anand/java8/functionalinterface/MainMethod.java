@@ -7,7 +7,7 @@ public class MainMethod {
 		Arithmetic obj = new Arithmetic() {
 			@Override
 			public int operation(int x, int y) {
-				return x + y;
+				return x + y + 12;
 			}
 		};
 
@@ -17,7 +17,7 @@ public class MainMethod {
 		System.out.println("Arithmetic.mul(3, 5) "+Arithmetic.mul(3, 5));
 
 		// Implementing Arithmetic interface using Lambda expression
-		Arithmetic obj1 = (int a, int b) -> a * b;
+		Arithmetic obj1 = (int a, int b) -> a * b * 2;
 
 		System.out.println("obj1.operation(2, 5) " + obj1.operation(2, 5));
 		System.out.println("obj1.sum(2, 5) " + obj1.sum(2, 5));
