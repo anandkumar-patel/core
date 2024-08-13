@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class MainMethod {
@@ -12,7 +13,7 @@ public class MainMethod {
 	public static void main(String[] args) {
 		MainMethod obj = new MainMethod();
 		List<Employee> employees = obj.getAllEmployees();
-		obj.problem10(employees);
+		obj.problem11(employees);
 	}
 
 	public void problem01(List<Employee> employees) {
@@ -99,6 +100,11 @@ public class MainMethod {
 		System.out.println(map);
 	}
 	
+	public void problem11(List<Employee> employees) {
+		System.out.println("average salary of male and female employees");
+		Map<String,Double> avgSalaryMap = employees.stream().collect(Collectors.groupingBy(Employee::getGender,Collectors.averagingDouble(Employee::getSalary)));
+		System.out.println(avgSalaryMap);
+	}
 	public List<Employee> getAllEmployees() {
 		List<Employee> employeeList = new ArrayList<Employee>();
 

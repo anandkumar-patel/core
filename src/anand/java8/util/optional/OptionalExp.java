@@ -24,6 +24,19 @@ public class OptionalExp {
 		} else {
 			System.out.println("word is null");
 		}
+		
+		checkNull.map(String::toUpperCase);
+		checkNull.flatMap(null);
+		checkNull.filter(null);
+		checkNull.ifPresent(null);
+		checkNull.ifPresentOrElse(null, null);
+		checkNull.or(null);
+		checkNull.orElse(null);
+		checkNull.orElseGet(null);
+		checkNull.orElseThrow();
+		checkNull.orElseThrow(null);
+		checkNull.stream();
+		
 
 		// java-9 enhancement
 		Optional<String> obj4 = Optional.ofNullable(null);

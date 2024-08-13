@@ -4,37 +4,44 @@ import java.util.*;
 
 public class HashMapExample {
     public static void main(String args[]) {
-        // create and add key-value pairs
-        Map<String, Integer> map = new HashMap<>();
-        map.put("k1", 1);
-        map.put("k2", 2);
-        map.putIfAbsent("k2", 3);
-        System.out.println(map); // {k1=1, k2=2}
 
+		Map<Integer, String> map = new HashMap<>();
+	    map.put(9, "linode.com");
+	    map.put(3, "heroku.com");
+	    map.put(5, "anand.com");
+	    map.put(1, "patel.com");
+	    
+	    System.out.println(map);
+	    
         // iterate
-        map.entrySet().forEach(e -> System.out.printf("%s=%d ", e.getKey(), e.getValue()));
-        map.keySet().forEach(e -> System.out.printf("%s ", e));
-        map.values().forEach(e -> System.out.printf("%d ", e));
-        System.out.println();
+	    System.out.println("entryset :");
+        map.entrySet().forEach(ele->System.out.print(ele.getKey() +" : "+ele.getValue()+", "));
+       
+        System.out.println("\nkeyset :");
+        map.keySet().forEach(System.out::print);
+        
+        System.out.println("\nvalues :");
+        map.values().forEach(System.out::print);
 
         // sort
-        SortedMap<String, Integer> sortedMap = new TreeMap<>(map);
-        System.out.println(sortedMap); // {k1=1, k2=2}
+        System.out.println("\nsorted :");
+        SortedMap<Integer,String> sortedMap = new TreeMap<>(map);
+        System.out.println(sortedMap);
 
         // query
-        System.out.println(map.get("k1")); // 1
-        System.out.println(map.containsKey("k1")); // true
-        System.out.println(map.containsValue(1)); // true
-        System.out.println(map.size()); // 2
+        System.out.println(map.get(1));
+        System.out.println(map.containsKey(2));
+        System.out.println(map.containsValue("patel.com"));
+        System.out.println(map.size()); 
 
         // update value
-        map.replace("k2", 20);
-        System.out.println(map); // {k1=1, k2=20}
+        map.replace(3, "anand.in");
+        System.out.println(map); // 
 
         // remove entries
-        map.remove("k2");
-        System.out.println(map); // {k1=1}
+        map.remove(9);
+        System.out.println(map); 
         map.clear();
-        System.out.println(map); // {}
+        System.out.println(map);    
     }
 }

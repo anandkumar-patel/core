@@ -1,6 +1,7 @@
-1-Single Responsibility
-	A class should always have one responsibility and 
+1. Single Responsibility
+	Solution: class should always have one responsibility and 
 	there should be only a single reason to change it.
+	
 	1.1-Bad Implementation
 		Employee class contains personal details, business logic to perform a few calculations, 
 		and DB logic to save/update.
@@ -9,14 +10,27 @@
 		We can split a single Employee class into multiple classes as per their specific responsibility.
 		It made our class loosely coupled, easy to maintain, and only single reason to modify.
 		
-2-Open Close
-	A Class should be Open for Extension but Closed for Modification.
+2. Open Close 
+	Solution: Class should be Open for Extension but Closed for Modification.
 	
 	2.1-Bad Implementation
-		EmployeeSalary class calculates salary based on employee type: Permanent and Contractual.
+		Shape class calculates area of shape based on shape-type: Circle and 
+		Rectangle.
 
-		Issue: In the future, if a new type(Part-time Employee) comes then 
-		the code needs to be modified to calculate the salary based on employee type.
+		Issue: In the future, if a new shape-type(Triangle) comes then 
+		the code needs to be modified to calculate the area based on shape-type.
 	
 	2.2-Good Implementation:
-		
+		We define the contract in the Shape class/interface for area calculation and 
+		extends this class/interface in the desired shape and write the area calculation
+		in child class so, if new shape added in future no need to change the existing
+		code just add new class and write the area calculation logic there.
+	
+3. Liskov Substitution Principle (LSP)
+	Solution: refactor the code so that the substitution of derived classes does not 
+	alter the behavior of the program.
+	
+4. Interface Segregation Principle (ISP)
+  	Solution:Split the interface into smaller, more specific interfaces.
+  	
+5. Dependency Inversion Principle (DIP)
