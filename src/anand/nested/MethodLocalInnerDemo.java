@@ -1,6 +1,6 @@
 package anand.nested;
 
-class Outer {
+class OuterClass {
 	void outerMethod() {
 		System.out.println("inside outerMethod");
 		// Inner class is local to outerMethod()
@@ -19,7 +19,7 @@ class Outer {
 
 public class MethodLocalInnerDemo {
 	public static void main(String[] args) {
-		Outer x = new Outer();
+		OuterClass x = new OuterClass();
 		x.outerMethod();
 	}
 }
