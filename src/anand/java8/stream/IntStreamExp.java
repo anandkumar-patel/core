@@ -23,6 +23,11 @@ public class IntStreamExp {
 		IntStream.of(1,2,3,4,5).forEach(i->System.out.print(i + " "));
 		System.out.println();
 		//IntStream.generate(null)
+		
+		IntStream.builder();
+		IntStream.iterate(0, null);
+		IntStream.iterate(0, null, null);
+		
 
 		System.out.println("**************** common functions ********************");
 		int[] inputArray = {3,2,5,2,1,6,5,9,8};
