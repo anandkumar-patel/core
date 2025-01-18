@@ -38,8 +38,9 @@ public class InsertionShort {
  * that the cards in your hand are still sorted. What will you do?
  * 
  * 
- * Worst Case Time Complexity [ Big-O ]: O(n2) Best Case Time Complexity
- * [Big-omega]: O(n) Average Time Complexity [Big-theta]: O(n2) Space
- * Complexity: O(1)
+ * Worst Case Time Complexity [ Big-O ]: O(n2) 
+ * Best Case Time Complexity [Big-omega]: O(n) 
+ * Average Time Complexity [Big-theta]: O(n2) 
+ * Space Complexity: O(1)
  * 
  */

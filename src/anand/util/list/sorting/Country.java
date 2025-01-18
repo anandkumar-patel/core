@@ -1,4 +1,4 @@
-package anand.util.list.ex1;
+package anand.util.list.sorting;
 
 public class Country implements Comparable<Country>{
 	private int cid;

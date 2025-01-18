@@ -17,7 +17,7 @@ public class DoubleBraceInitialization {
 			}
 		};
 		
-		System.out.println(list.toString());
+		System.out.println(list);
 	}
 
 }

@@ -1,4 +1,4 @@
-package anand.util.list.ex1;
+package anand.util.list.sorting;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,57 +13,10 @@ import java.util.ListIterator;
  *synchronized : no
  *size increase by 50%
  */
-public class ArrayListDemo {
+public class ArrayListSorting {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Arraylist of Integer type :");
-		List<Integer> intList = new ArrayList<>();
-		intList.add(21);
-		intList.add(41);
-		intList.add(11);
-		intList.add(45);
-		intList.add(13);
-		intList.add(19);
-		
-		//looping arraylist
-		System.out.println("Printing intList ");
-		ListIterator<Integer> intIter = intList.listIterator();
-		while(intIter.hasNext()) {
-			System.out.println(intIter.next());
-		}
-		
-		//sorting the arraylist
-		Collections.sort(intList);
-		System.out.println("Printing intList after sorting");
-		ListIterator<Integer> intIter1 = intList.listIterator();
-		while(intIter1.hasNext()) {
-			System.out.println(intIter1.next());
-		}
-		
-		System.out.println("Arraylist of string type :");
-		List<String> stringList = new ArrayList<>();
-		stringList.add("Rama");
-		stringList.add("Ganesh");
-		stringList.add("shooru");
-		stringList.add("davil");
-		stringList.add("practo");
-		stringList.add("donkey");
-		
-		//looping arraylist
-		System.out.println("Printing stringList ");
-		ListIterator<String> stringIter = stringList.listIterator();
-		while(stringIter.hasNext()) {
-			System.out.println(stringIter.next());
-		}
-		
-		//sorting the arraylist
-		Collections.sort(stringList);
-		System.out.println("Printing stringList after sorting");
-		ListIterator<String> stringIter1 = stringList.listIterator();
-		while(stringIter1.hasNext()) {
-			System.out.println(stringIter1.next());
-		}
 		
 		System.out.println("Arraylist of custom object type {countryList}:");
 		List<Country> countryList = new ArrayList<>();

@@ -10,7 +10,7 @@ public class CachedThreadPoolDemo {
 		ExecutorService service = Executors.newCachedThreadPool();
 
 		// submit the task for execution
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 3; i++) {
 			service.execute(new Task());
 		}
 	}
@@ -18,8 +18,13 @@ public class CachedThreadPoolDemo {
 	static class Task implements Runnable {
 
 		@Override
-		public void run() {
+		public void run() throws NullPointerException{
 			System.out.println("hello");
+			String ad = "data";
+			if(ad.length()>1) {
+				ad = null;
+			}
+			System.out.println("ad len"+ad.length());
 		}
 
 	}

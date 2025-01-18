@@ -1,4 +1,4 @@
-package anand.util.list.ex1;
+package anand.util.list.sorting;
 
 import java.util.Comparator;
 

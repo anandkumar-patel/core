@@ -1,6 +1,6 @@
 package anand.serialization;
 import java.io.*;
-public class DeserializationDemo
+public class DeSerializableMain
 {
 	public static void main(String[] args) throws Exception {
 		Student obj1;

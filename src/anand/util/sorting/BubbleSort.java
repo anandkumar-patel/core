@@ -6,8 +6,8 @@ public class BubbleSort {
 	public static void main(String[] args) {
 
 		int[] arr1 = { 9, 2, 4, 7, 3, 7, 10 };
-		int[] arr2  = {3, 6, 1, 8, 4, 5};
-		int[] arr = { 10, 14, 12, 10, 12, 16 };
+		int[] arr  = {3, 6, 1, 8, 4, 5};
+		int[] arr3 = { 10, 14, 12, 10, 12, 16 };
 		
 		System.out.println(Arrays.toString(arr));
 
@@ -60,11 +60,10 @@ public class BubbleSort {
  * As it's name suggest bigger bubble get out first from water.
  * 
  * Following are the Time and Space complexity for the Bubble Sort algorithm.
- * Worst Case Time Complexity [ Big-O ]: O(n2) Best Case Time Complexity
- * [Big-omega]: O(n) Average Time Complexity [Big-theta]: O(n2) Space
- * Complexity: O(1)
- * 
- * 
+ * Worst Case Time Complexity [ Big-O ]: O(n2) 
+ * Best Case Time Complexity [Big-omega]: O(n) 
+ * Average Time Complexity [Big-theta]: O(n2) 
+ * Space Complexity: O(1)
  * 
  * Complexity Analysis of Bubble Sort In Bubble Sort, n-1 comparisons will be
  * done in the 1st pass, n-2 in 2nd pass, n-3 in 3rd pass and so on.

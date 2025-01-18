@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 public class Student implements Serializable {
 	private static final long serialVersionUID = 1L;
-	transient int age;
-	String name;
-	char grade;
+	private transient int age;
+	private String name;
+	private char grade;
 
 	Student(int age, String name, char grade) {
 		this.age = age;
