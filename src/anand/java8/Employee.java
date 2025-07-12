@@ -1,45 +1,97 @@
 package anand.java8;
 
 public class Employee {
-	private int empId;
-	private String empName;
-	private Long empSalary;
-	private Boolean isActive;
-	public Employee(int empId, String empName, Long empSalary, Boolean isActive) {
-		this.empId = empId;
-		this.empName = empName;
-		this.empSalary = empSalary;
+	private int id;
+	private String name;
+	private int age;
+	private String gender;
+	private String department;
+	private boolean isActive;
+	private int yearOfJoining;
+	private double salary;
+
+	public Employee() {
+		super();
+	}
+
+	public Employee(int id, String name, int age, String gender, String department,boolean isActive, int yearOfJoining, double salary) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+		this.department = department;
 		this.isActive = isActive;
+		this.yearOfJoining = yearOfJoining;
+		this.salary = salary;
 	}
-	public int getEmpId() {
-		return empId;
-	}	
-	public void setEmpId(int empId) {
-		this.empId = empId;
+
+	public int getId() {
+		return id;
 	}
-	public String getEmpName() {
-		return empName;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	public void setEmpName(String empName) {
-		this.empName = empName;
+
+	public String getName() {
+		return name;
 	}
-	public Long getEmpSalary() {
-		return empSalary;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public void setEmpSalary(Long empSalary) {
-		this.empSalary = empSalary;
+
+	public int getAge() {
+		return age;
 	}
-	public Boolean getIsActive() {
-		return isActive;
+
+	public void setAge(int age) {
+		this.age = age;
 	}
-	public void setIsActive(Boolean isActive) {
-		this.isActive = isActive;
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
 	}
 	
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public int getYearOfJoining() {
+		return yearOfJoining;
+	}
+
+	public void setYearOfJoining(int yearOfJoining) {
+		this.yearOfJoining = yearOfJoining;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+
 	@Override
 	public String toString() {
-		return "Employee [empId=" + empId + ", empName=" + empName + ", empSalary=" + empSalary + ", isActive="
-				+ isActive + "]";
+		return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", gender=" + gender + ", department="
+				+ department + ", isActive=" + isActive + ", yearOfJoining=" + yearOfJoining + ", salary=" + salary
+				+ "]";
 	}
 
 }

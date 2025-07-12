@@ -18,11 +18,11 @@ public class Generics03Class<T> {
 	
 	public static void main(String[] args) {
 		System.out.println("*** simple generic class ***");
-		Generics03Class<String> stringDataObj = new Generics03Class<String>("Hello", "string");
+		Generics03Class<String> stringDataObj = new Generics03Class<>("Hello", "string");
 		stringDataObj.printMethod();
 		stringDataObj.OwnTypeMethod(11);
 
-		Generics03Class<Integer> integerDataObj = new Generics03Class<Integer>(15, "integer");
+		Generics03Class<Integer> integerDataObj = new Generics03Class<>(15, "integer");
 		integerDataObj.printMethod();
 		integerDataObj.OwnTypeMethod("anand");
 	}

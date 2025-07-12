@@ -1,24 +1,23 @@
 package anand.generics;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Generics01 {
 
 	public static void main(String[] args) {
 		
-		List<String> stringList = new ArrayList<String>();
+		List<String> stringList = new ArrayList<>();
 		stringList.add("anand");
 		stringList.add("patel");
 		
-		List list = new ArrayList();
-		list.add("anand");
-		list.add("patel");
-		
-		List<Integer> integerList = new ArrayList<Integer>();
+		List<Integer> integerList = new ArrayList<>();
 		integerList.add(12);
 		integerList.add(14);
+		
+		List list = new ArrayList();
+		list.add("ok");
+		list.add("tata");
 		
 		printElements01(stringList); // OK
 		printElements01(integerList); // OK
@@ -55,7 +54,7 @@ public class Generics01 {
 	
 	public static void printElements03(List<?> listOfUnknownType) {
 		System.out.println("printElements03() method called...");
-		// listOfUnknownType.add("abc"); // compile time error
+		//listOfUnknownType.add("abc"); // compile time error
 
 		System.out.println(listOfUnknownType);
 	}	

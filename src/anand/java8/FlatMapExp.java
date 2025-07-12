@@ -3,6 +3,7 @@ package anand.java8;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FlatMapExp {
 	public static void main(String[] args) {
@@ -15,20 +16,16 @@ public class FlatMapExp {
 		System.out.println("Flattened List: " + flattenedList);
 
 		//
-		List<String> lower1 = nestedList.stream().flatMap(list -> list.stream().map(s -> s.toLowerCase()))
+		List<String> lower1 = nestedList.stream().flatMap(list -> list.stream().map(String::toLowerCase))
 				.collect(Collectors.toList());
 		System.out.println("Flattened List{ lower }: " + lower1);
 		
 		List<String> lower2 = nestedList.stream().flatMap(list -> list.stream())
 				.map(s->s.toLowerCase()).collect(Collectors.toList());
 		System.out.println("Flattened List{ lower }: " + lower2);
-
-		List<List<Employee>> empList = Arrays.asList(
-				Arrays.asList(new Employee(1112, "anand", 4454L, true), new Employee(1113, "uday", 7865L, false)),
-				Arrays.asList(new Employee(1114, "kumar", 6284L, false), new Employee(1115, "singh", 8945L, true)),
-				Arrays.asList(new Employee(1116, "patel", 1874L, true), new Employee(1117, "raman", 9345L, true)));
-
 		
-		empList.stream().flatMap(list->list.stream());
+		
+		Stream<Stream<String>> s = nestedList.stream().map(list -> list.stream());
+		s.forEach(ls-> ls.forEach(System.out::println));
 	}
 }

@@ -41,7 +41,7 @@ public class MustKnow {
 		System.out.println("find frequency of each character in a string");
 		String inputString = "Java Concept Of The Day";
 		Map<Character, Long> charCountMap = inputString.chars().mapToObj(c -> (char) c)
-				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+				.collect(Collectors.groupingBy(c->c, Collectors.counting()));
 		System.out.println(charCountMap);
 
 		System.out.println("find frequency of each element in an array or a list");

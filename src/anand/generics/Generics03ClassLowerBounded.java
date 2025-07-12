@@ -10,7 +10,7 @@ public class Generics03ClassLowerBounded<T> {
     }
 	
     public static void main(String[] args) {
-    	Generics03ClassLowerBounded<Integer> obj1 = new Generics03ClassLowerBounded<>();
+    	Generics03ClassLowerBounded<Number> obj1 = new Generics03ClassLowerBounded<>();
 
         
 		List<Number> intList = Arrays.asList(11,12,13);
@@ -21,7 +21,7 @@ public class Generics03ClassLowerBounded<T> {
         System.out.println(intList);
 
 		List<Number> doubleList = Arrays.asList(11.12f,12.13f,13.12f);
-       // obj1.addNumbers(doubleList, 20.12f);
+        obj1.addNumbers(doubleList, 20.12f);
         
         System.out.println(doubleList);
     }
