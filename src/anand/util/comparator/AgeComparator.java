@@ -2,6 +2,8 @@ package anand.util.comparator;
 
 import java.util.Comparator;
 
+import anand.java8.Employee;
+
 public class AgeComparator  implements Comparator<Employee> {
 
     @Override
